@@ -28,5 +28,8 @@ def add_message_to_db(data):
     sql = text(
         f"INSERT INTO messages (full_name, email, message) VALUES (\'{data['full_name']}\', \'{data['email']}\', \'{data['message']}\')"
     )
+    print(sql)
+    conn.execute(sql)
+    conn.commit()
 
-  conn.execute(sql)
+
